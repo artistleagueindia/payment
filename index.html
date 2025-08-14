@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Artist League Camp 2025 – Payment (Test ₹1)</title>
+  <style>
+    :root { --brand:#0a7cff; --accent:#111; --bg:#fafafa; }
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+         margin:0;background:var(--bg);color:#222}
+    .wrap{max-width:560px;margin:auto;padding:24px}
+    .card{background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.08);padding:24px}
+    h1{font-size:22px;margin:0 0 6px} p{margin:8px 0 16px;line-height:1.5}
+    .btn{display:inline-block;padding:14px 18px;border-radius:10px;background:var(--brand);
+         color:#fff;text-decoration:none;font-weight:600}
+    .btn.secondary{background:#111}
+    .btn.outline{background:#fff;color:#111;border:1px solid #ddd}
+    .qr{display:block;width:220px;max-width:70%;margin:14px auto;border-radius:12px;
+         box-shadow:0 6px 16px rgba(0,0,0,.08)}
+    .hint{font-size:13px;color:#555}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .row .btn{flex:1;text-align:center}
+    code{background:#f2f2f2;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Artist League Camp 2025 – Payment</h1>
+      <p>Test Amount: <b>₹1</b></p>
+
+      <!-- Pay button: opens UPI apps on mobile -->
+      <div class="row" style="margin:10px 0 6px">
+        <a id="pay" class="btn"
+           href="upi://pay?pa=yashmani1996@okhdfcbank&pn=Artist%20League&am=1&cu=INR&tn=Test%20Payment">
+          Pay ₹1 via UPI
+        </a>
+        <button id="copy" class="btn outline" type="button">Copy UPI Link</button>
+      </div>
+
+      <p class="hint">Tip: open this page on your phone and tap the button. If it doesn’t open, scan the QR below.</p>
+
+      <!-- Place qr.png in the same repo -->
+      <img class="qr" src="qr.png" alt="UPI QR Code" />
+
+      <hr style="margin:20px 0">
+
+      <h2 style="font-size:18px;margin:0 0 8px">Upload Payment Screenshot</h2>
+      <p><a class="btn" href="https://forms.gle/frHh6VVw5h57bWwy6" target="_blank" rel="noopener">
+        Upload Screenshot
+      </a></p>
+      <p class="hint">Use the same phone number you entered in the registration form so we can match your payment automatically.</p>
+
+      <details style="margin-top:16px">
+        <summary>Having trouble?</summary>
+        <p class="hint">Copy this UPI link and paste in GPay/PhonePe/Paytm:</p>
+        <p><code id="rawLink">upi://pay?pa=yashmani1996@okhdfcbank&pn=Artist%20League&am=1&cu=INR&tn=Test%20Payment</code></p>
+      </details>
+    </div>
+  </div>
+
+  <script>
+    // Copy-to-clipboard for desktop fallback
+    document.getElementById('copy').addEventListener('click', async function(){
+      const link = document.getElementById('pay').href;
+      try {
+        await navigator.clipboard.writeText(link);
+        this.textContent = 'Copied!';
+        setTimeout(()=> this.textContent = 'Copy UPI Link', 1500);
+      } catch (e) {
+        alert('Copy failed. Long-press the link to copy:\n' + link);
+      }
+    });
+
+    // Optional: gently attempt to open UPI link on load for mobile users
+    (function () {
+      var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (!isMobile) return; // don’t auto-open on desktop
+      // Uncomment to auto-attempt open on page load:
+      // window.location.href = document.getElementById('pay').href;
+    })();
+  </script>
+</body>
+</html>
