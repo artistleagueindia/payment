@@ -1,91 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Artist League Camp – Payment (Test ₹1)</title>
-  <style>
-    :root { --brand:#0a7cff; --bg:#f7f8fb; --text:#222; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
-         background:var(--bg);color:var(--text)}
-    .wrap{max-width:560px;margin:auto;padding:24px}
-    .card{background:#fff;border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,.08);padding:24px}
-    h1{font-size:22px;margin:0 0 10px}
-    ol{margin:0 0 18px 18px;line-height:1.55}
-    .qr{display:block;width:240px;max-width:75%;margin:14px auto;border-radius:12px;
-        box-shadow:0 6px 16px rgba(0,0,0,.08)}
-    .muted{font-size:13px;color:#555;margin-top:6px}
-    code{background:#f1f3f5;border-radius:6px;padding:2px 6px}
-    hr{border:none;height:1px;background:#eee;margin:20px 0}
-    .center{text-align:center}
-    .copy-btn{
-        background:var(--brand);
-        color:white;
-        border:none;
-        padding:6px 12px;
-        border-radius:6px;
-        font-size:13px;
-        cursor:pointer;
-        margin-left:8px;
-    }
-    .copy-btn:hover{background:#005fcc}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist League Camp Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            background: #fff;
+            padding: 20px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 200px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ol {
+            text-align: left;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .muted {
+            color: #666;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Artist League Camp – Payment (Test)</h1>
-      <p><b>Amount:</b> ₹1</p>
+    <div class="container">
+        <h2>Artist League Camp Payment</h2>
+        <p>Please follow the instructions carefully to complete your payment of <b>₹6,499</b>.</p>
+        
+        <h3>UPI ID: <span id="upiId">yashmani1996@okhdfcbank</span></h3>
+        <button onclick="copyUPI()">Copy UPI ID</button>
 
-      <img class="qr" src="qr.png" alt="Scan to pay via UPI" />
+        <h3>Scan this QR Code to Pay</h3>
+        <img src="qr.png" alt="UPI QR Code">
+        
+        <h4>Instructions:</h4>
+        <ol>
+            <li>Open any UPI app (Google Pay, PhonePe, Paytm, etc.) on <b>another phone</b> — not the one displaying this page.</li>
+            <li>Scan the above QR code.</li>
+            <li>Enter the exact amount: <b>₹6,499</b>.</li>
+            <li>Confirm the payee name: <b>Yashmani Shakya</b>.</li>
+            <li>In the payment note, write: <b>Artist League Camp</b>.</li>
+            <li>Complete the payment.</li>
+            <li>Take a clear screenshot of the payment confirmation.</li>
+            <li>Upload your screenshot using the link below.</li>
+        </ol>
 
-      <div class="center">
-        <b>UPI ID:</b> 
-        <code id="upiId">yashmani1996@okhdfcbank</code>
-        <button class="copy-btn" onclick="copyUPI()">Copy</button>
-        <p class="muted">If the QR doesn’t scan, you can pay manually to the UPI ID above for ₹1 and add note “Test Payment”.</p>
-      </div>
+        <p><a href="https://forms.gle/frHh6VVw5h57bWwy6" target="_blank">📤 Upload Payment Screenshot</a></p>
 
-      <hr>
-
-      <h2 style="font-size:18px;margin:0 0 8px">Steps to make the payment</h2>
-      <ol>
-        <li>Open your UPI app (Google Pay, PhonePe, Paytm, etc.).</li>
-        <li>Select <b>Scan QR</b> and scan the code above.</li>
-        <li>Confirm the payee name: <b>Artist League</b>.</li>
-        <li>Enter amount: <b>₹1</b> (if not already filled).</li>
-        <li>Add note: <b>Test Payment</b>.</li>
-        <li>Complete the payment.</li>
-        <li>Take a screenshot of your successful payment confirmation screen.</li>
-      </ol>
-
-      <hr>
-
-      <h2 style="font-size:18px;margin:0 0 10px" class="center">Upload your payment screenshot</h2>
-      <p class="center muted">After payment, upload your screenshot here:</p>
-      <p class="center"><a href="https://forms.gle/frHh6VVw5h57bWwy6" target="_blank" rel="noopener">📤 Upload Screenshot</a></p>
-
-      <details style="margin-top:8px">
-        <summary>Troubleshooting</summary>
-        <ul>
-          <li>If QR doesn’t scan, increase screen brightness or enter UPI ID manually.</li>
-          <li>If wrong amount was sent, make a new payment for the correct amount.</li>
-          <li>Make sure the uploaded screenshot clearly shows transaction details.</li>
-        </ul>
-      </details>
+        <p class="muted">If the QR doesn’t scan, you can pay manually to the UPI ID above for ₹6,499 and add note “Artist League Camp”. Confirm payee name is <b>Yashmani Shakya</b>.</p>
     </div>
-  </div>
 
-  <script>
-    function copyUPI() {
-      const upiId = document.getElementById("upiId").innerText;
-      navigator.clipboard.writeText(upiId).then(() => {
-        alert("UPI ID copied to clipboard!");
-      }).catch(err => {
-        alert("Failed to copy UPI ID.");
-      });
-    }
-  </script>
+    <script>
+        function copyUPI() {
+            const upiId = document.getElementById("upiId").innerText;
+            navigator.clipboard.writeText(upiId).then(() => {
+                alert("UPI ID copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy UPI ID");
+            });
+        }
+    </script>
 </body>
 </html>
