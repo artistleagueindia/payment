@@ -1,86 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artist League Camp Payment</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 400px;
-            background: #fff;
-            padding: 15px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .upi-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            font-size: 14px;
-            margin: 8px 0;
-        }
-        img {
-            max-width: 160px;
-            margin: 10px 0;
-        }
-        button, .upload-btn {
-            padding: 8px 12px;
-            font-size: 14px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        button:hover, .upload-btn:hover {
-            background-color: #0056b3;
-        }
-        ol {
-            text-align: left;
-            display: inline-block;
-            margin: 10px auto 5px;
-            padding-left: 18px;
-            font-size: 13px;
-        }
-        .muted {
-            color: #666;
-            font-size: 12px;
-            margin-top: 8px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artist League Camp Payment</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 400px;
+        background: #fff;
+        padding: 20px 15px;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+    h3 {
+        margin-bottom: 8px;
+        color: #222;
+    }
+    .price {
+        font-size: 15px;
+        margin-bottom: 15px;
+        color: #555;
+    }
+    .upi-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        background: #f1f1f1;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    .btn {
+        padding: 6px 12px;
+        font-size: 13px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .btn-copy {
+        background-color: #007bff;
+        color: white;
+    }
+    .btn-copy:hover {
+        background-color: #0056b3;
+    }
+    .qr {
+        max-width: 160px;
+        margin: 10px auto 5px;
+        display: block;
+    }
+    .scan-text {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+    .btn-upload {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        background-color: #28a745;
+        color: white;
+        font-size: 14px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .btn-upload:hover {
+        background-color: #1e7e34;
+    }
+    ol {
+        text-align: left;
+        font-size: 13px;
+        margin: 0 auto;
+        padding-left: 18px;
+        line-height: 1.4;
+        max-width: 320px;
+    }
+    .muted {
+        color: #777;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+</style>
 </head>
 <body>
     <div class="container">
         <h3>Artist League Camp Payment</h3>
-        <p style="margin:5px 0;">Pay <b>₹6,499</b> using the details below:</p>
+        <p class="price">Pay <b>₹6,499</b> using the details below</p>
         
         <div class="upi-row">
-            <span><b>UPI ID:</b> <span id="upiId">yashmani1996@okhdfcbank</span></span>
-            <button onclick="copyUPI()">Copy</button>
+            <span><b>UPI:</b> <span id="upiId">yashmani1996@okhdfcbank</span></span>
+            <button class="btn btn-copy" onclick="copyUPI()">Copy</button>
         </div>
 
-        <img src="qr.png" alt="UPI QR Code">
+        <img src="qr.png" alt="UPI QR Code" class="qr">
+        <p class="scan-text">📷 Scan this QR in your UPI app</p>
         
-        <!-- Upload Screenshot Button -->
-        <a href="https://forms.gle/frHh6VVw5h57bWwy6" target="_blank" class="upload-btn">📤 Upload Screenshot</a>
+        <a href="https://forms.gle/frHh6VVw5h57bWwy6" target="_blank" class="btn-upload">📤 Upload Payment Screenshot</a>
         
         <ol>
-            <li>Open your UPI app.</li>
-            <li>Scan the QR code or use the UPI ID.</li>
+            <li>Open any UPI app (Google Pay, PhonePe, Paytm, etc.).</li>
+            <li>Scan the QR or use the UPI ID above.</li>
             <li>Pay ₹6,499 to <b>Yashmani Shakya</b>.</li>
-            <li>Add note: <b>Artist League Camp</b>.</li>
-            <li>Take a screenshot of payment.</li>
+            <li>Take a screenshot of payment confirmation.</li>
             <li>Upload it using the button above.</li>
         </ol>
 
