@@ -13,67 +13,78 @@
             background-color: #f4f4f4;
         }
         .container {
-            max-width: 500px;
+            max-width: 400px;
             background: #fff;
-            padding: 20px;
-            margin: 50px auto;
+            padding: 15px;
+            margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        img {
-            max-width: 200px;
-            margin: 20px 0;
+        .upi-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            margin: 8px 0;
         }
-        button {
-            padding: 10px 15px;
-            margin-top: 10px;
+        img {
+            max-width: 160px;
+            margin: 10px 0;
+        }
+        button, .upload-btn {
+            padding: 8px 12px;
+            font-size: 14px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
         }
-        button:hover {
+        button:hover, .upload-btn:hover {
             background-color: #0056b3;
         }
         ol {
             text-align: left;
             display: inline-block;
-            margin-top: 20px;
+            margin: 10px auto 5px;
+            padding-left: 18px;
+            font-size: 13px;
         }
         .muted {
             color: #666;
-            font-size: 14px;
-            margin-top: 15px;
+            font-size: 12px;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Artist League Camp Payment</h2>
-        <p>Please follow the instructions carefully to complete your payment of <b>₹6,499</b>.</p>
+        <h3>Artist League Camp Payment</h3>
+        <p style="margin:5px 0;">Pay <b>₹6,499</b> using the details below:</p>
         
-        <h3>UPI ID: <span id="upiId">yashmani1996@okhdfcbank</span></h3>
-        <button onclick="copyUPI()">Copy UPI ID</button>
+        <div class="upi-row">
+            <span><b>UPI ID:</b> <span id="upiId">yashmani1996@okhdfcbank</span></span>
+            <button onclick="copyUPI()">Copy</button>
+        </div>
 
-        <h3>Scan this QR Code to Pay</h3>
         <img src="qr.png" alt="UPI QR Code">
         
-        <h4>Instructions:</h4>
+        <!-- Upload Screenshot Button -->
+        <a href="https://forms.gle/frHh6VVw5h57bWwy6" target="_blank" class="upload-btn">📤 Upload Screenshot</a>
+        
         <ol>
-            <li>Open any UPI app (Google Pay, PhonePe, Paytm, etc.) on <b>another phone</b> — not the one displaying this page.</li>
-            <li>Scan the above QR code.</li>
-            <li>Enter the exact amount: <b>₹6,499</b>.</li>
-            <li>Confirm the payee name: <b>Yashmani Shakya</b>.</li>
-            <li>In the payment note, write: <b>Artist League Camp</b>.</li>
-            <li>Complete the payment.</li>
-            <li>Take a clear screenshot of the payment confirmation.</li>
-            <li>Upload your screenshot using the link below.</li>
+            <li>Open your UPI app.</li>
+            <li>Scan the QR code or use the UPI ID.</li>
+            <li>Pay ₹6,499 to <b>Yashmani Shakya</b>.</li>
+            <li>Add note: <b>Artist League Camp</b>.</li>
+            <li>Take a screenshot of payment.</li>
+            <li>Upload it using the button above.</li>
         </ol>
 
-        <p><a href="https://forms.gle/frHh6VVw5h57bWwy6" target="_blank">📤 Upload Payment Screenshot</a></p>
-
-        <p class="muted">If the QR doesn’t scan, you can pay manually to the UPI ID above for ₹6,499 and add note “Artist League Camp”. Confirm payee name is <b>Yashmani Shakya</b>.</p>
+        <p class="muted">If QR doesn’t scan, pay manually to the UPI ID above.</p>
     </div>
 
     <script>
