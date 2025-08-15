@@ -19,6 +19,17 @@
     code{background:#f1f3f5;border-radius:6px;padding:2px 6px}
     hr{border:none;height:1px;background:#eee;margin:20px 0}
     .center{text-align:center}
+    .copy-btn{
+        background:var(--brand);
+        color:white;
+        border:none;
+        padding:6px 12px;
+        border-radius:6px;
+        font-size:13px;
+        cursor:pointer;
+        margin-left:8px;
+    }
+    .copy-btn:hover{background:#005fcc}
   </style>
 </head>
 <body>
@@ -29,9 +40,11 @@
 
       <img class="qr" src="qr.png" alt="Scan to pay via UPI" />
 
-      <div>
-        <p class="center"><b>UPI ID:</b> <code>yashmani1996@okhdfcbank</code></p>
-        <p class="center muted">If the QR doesn’t scan, you can pay manually to the UPI ID above for ₹1 and add note “Test Payment”.</p>
+      <div class="center">
+        <b>UPI ID:</b> 
+        <code id="upiId">yashmani1996@okhdfcbank</code>
+        <button class="copy-btn" onclick="copyUPI()">Copy</button>
+        <p class="muted">If the QR doesn’t scan, you can pay manually to the UPI ID above for ₹1 and add note “Test Payment”.</p>
       </div>
 
       <hr>
@@ -63,5 +76,16 @@
       </details>
     </div>
   </div>
+
+  <script>
+    function copyUPI() {
+      const upiId = document.getElementById("upiId").innerText;
+      navigator.clipboard.writeText(upiId).then(() => {
+        alert("UPI ID copied to clipboard!");
+      }).catch(err => {
+        alert("Failed to copy UPI ID.");
+      });
+    }
+  </script>
 </body>
 </html>
